@@ -1,0 +1,28 @@
+﻿<Application x:Class="CryptoConsoleGUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:CryptoConsoleGUI"
+             xmlns:viewModel="clr-namespace:CryptoConsoleGUI.MVVM.ViewModel"
+             xmlns:view="clr-namespace:CryptoConsoleGUI.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/PathTextBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:EncryptViewModel}">
+                <view:EncryptView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type viewModel:DecryptViewModel}">
+                <view:DecryptView/>
+            </DataTemplate>
+            
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
